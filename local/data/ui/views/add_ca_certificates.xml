@@ -2,27 +2,47 @@
   <label>Add CA Certificates</label>
   <row>
     <panel>
-      <title>$canametok$ $pwtok$</title>
       <html>
         <div>
-          <form action="#" method="POST">
-            <label for="caname">CA Certificate Name</label>
-            <input type="text" id="caname" name="caname" placeholder="myCAName.."/>
-        
-            <label for="pw">Password</label>
-            <input type="password" id="pw" name="password" placeholder="Please remember me.."/>
-        
-            <!--
-            <label for="country">Country</label>
-            <select id="country" name="country">
-              <option value="australia">Australia</option>
-              <option value="canada">Canada</option>
-              <option value="usa">USA</option>
-            </select>
-            -->
-            <input type="submit" value="Submit" class="btn btn-primary edit-done pull-right" id="submit-btn"/>
+          <form>
+            <input type="checkbox" id="cbconf" name="cbconf" checked="checked">Use local config file</input>
+            
+            <div id="useconf">
+              <label for="confpath">Config file path</label>
+              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf" />
+            </div>
+            
+            <div id="usefields">
+              <label for="caname">CA Certificate Name</label>
+              <input type="text" id="caname" name="caname" placeholder="myCAName.." />
+          
+              <label for="pw">Password</label>
+              <input type="password" id="pw" name="password" placeholder="Please remember me.." />
+  
+              <label for="C">Country Name (2 letter code) [AU]</label>
+              <input type="text" id="C" name="C" placeholder="DE">DE</input>
+  
+              <label for="ST">State or Province Name (full name) [Some-State]</label>
+              <input type="text" id="ST" name="ST" placeholder="Bavaria"/>
+  
+              <label for="L">Locality Name (eg, city) []</label>
+              <input type="text" id="L" name="L" placeholder="Munich"/>
+  
+              <label for="O">Organization Name (eg, company) [Internet Widgits Pty Ltd]</label>
+              <input type="text" id="O" name="O" placeholder="Evil Corp">Evil Corp</input>
+  
+              <label for="OU">Organizational Unit Name (eg, section) []</label>
+              <input type="text" id="OU" name="OU" placeholder="RnD"/>
+  
+              <label for="CN">Common Name (e.g. server FQDN or YOUR name) []</label>
+              <input type="text" id="CN" name="CN" placeholder="Boss"/>
+  
+              <label for="email">Common Name (e.g. server FQDN or YOUR name) []</label>
+              <input type="text" id="email" name="email" placeholder="boss@evil.corp"/>
+            </div>
+            
           </form>
-          <button id="my-btn">clickme</button>
+          <button id="submit-btn" value="Submit" class="btn btn-primary">Submit</button>
         </div>
       </html>
     </panel>
