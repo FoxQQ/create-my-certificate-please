@@ -44,10 +44,17 @@ require(["splunkjs/mvc/searchmanager",
       });
       
       let smres = mvc.Components.get(`submit-ca${submited}`);
-      console.log(smres);
-      submited++;
-      
-      
+      let res = smres.data("results");
+      res.on("data", function(){
+         let rows = res.data().rows[0][0];
+         console.log(rows);
+         if(rows!=='error'){
+            $('#ca-created').addClass('label-success').html(`<p>CA created here: ${rows}</p>`);
+         }else{
+            $('#ca-created').addClass('label-waring').html(`<p>Error</p>`);
+         }
+      });
+      submited++;    
       
    });
 

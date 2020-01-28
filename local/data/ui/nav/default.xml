@@ -1,0 +1,9 @@
+<nav search_view="search">
+  <view name="search" default='true' />
+  <view name="add_ca_certificates" />
+  <view name="add_server_certificate" />
+  <view name="datasets" />
+  <view name="reports" />
+  <view name="alerts" />
+  <view name="dashboards" />
+</nav>

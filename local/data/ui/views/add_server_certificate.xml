@@ -1,24 +1,24 @@
-<dashboard script="setup-ca.js" stylesheet="app-style.css">
-  <label>Add CA Certificates</label>
+<dashboard script="setup-server.js" stylesheet="app-style.css">
+  <label>Add Server Certificates</label>
   <row>
     <panel>
       <html>
-        <div id="ca-created"></div>
+        <div id="CAexists"/>
         <div>
           <form>
             <input type="checkbox" id="cbconf" name="cbconf" checked="checked">Use local config file</input>
             
             <div id="useconf">
               <label for="confpath">Config file path</label>
-              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf" />
+              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf"/>
             </div>
             
             <div id="usefields" style="display:none;">
               <label for="caname">CA Certificate Name</label>
-              <input type="text" id="caname" name="caname" placeholder="myCAName.." />
+              <input type="text" id="caname" name="caname" placeholder="myCAName.."/>
           
               <label for="pw">Password</label>
-              <input type="password" id="pw" name="password" placeholder="Please remember me.." />
+              <input type="password" id="pw" name="password" placeholder="Please remember me.."/>
   
               <label for="C">Country Name (2 letter code) [AU]</label>
               <input type="text" id="C" name="C" placeholder="DE">DE</input>
@@ -43,7 +43,7 @@
             </div>
             
           </form>
-          <button id="submit-btn" value="Submit" class="btn btn-primary">Submit</button>
+          <button id="submit-btn" value="Submit" class="btn btn-primary" style="display:none;">Submit</button>
         </div>
       </html>
     </panel>

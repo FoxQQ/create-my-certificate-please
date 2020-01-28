@@ -7,3 +7,15 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.myerror {
+  background-color: #12a021;
+}
+
+.myforeground {
+  color: #FF000f;
+}
+
+.ca-radio{
+  list-style-type: none;
+}

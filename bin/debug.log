@@ -1,0 +1,359 @@
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=0', 'caname=magdasCA', 'capw=secret', 'subjstr=/C=DE/ST=bv/L=ING/O=LOL', 'Corp/OU=Lol', 'Dept/CN=Magda', 'email=']
+private key
+Generating RSA private key, 2048 bit long modulus
+................................+++++
+.....................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=bv/L=ING/O=LOL
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'CN': 'some common name', 'C': 'DE', 'caname': 'CAMarkus', 'O': 'Evil Corp', 'L': 'Munich', 'capw': 'secretserce', 'OU': 'RnD', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'ST': 'By', 'cbconf': '1', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name'}
+private key
+Generating RSA private key, 2048 bit long modulus
+..........................+++++
+......+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'cbconf': '1', 'caname': 'CAMarkus', 'CN': 'some common name', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'ST': 'By', 'C': 'DE', 'capw': 'secretserce', 'OU': 'RnD', 'O': 'Evil Corp', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'L': 'Munich'}
+private key
+Generating RSA private key, 2048 bit long modulus
+.................+++++
+.......................................................................................................................................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=0', 'caname=myTestCA', 'capw=1234qwer', 'subjstr=/C=DE/ST=Bavaria/L=Munci/O=Munich/OU=Evil', 'Corp/CN=Boss', 'email=']
+private key
+Generating RSA private key, 2048 bit long modulus
+....+++++
+...+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=Bavaria/L=Munci/O=Munich/OU=Evil
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=0', 'caname=myTestCA', 'capw=1234qwer', 'subjstr=/C=DE/ST=Bavaria/L=Munci/O=Munich/OU=Evil', 'Corp/CN=Boss', 'email=']
+private key
+Generating RSA private key, 2048 bit long modulus
+.........................................................................................+++++
+....+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=Bavaria/L=Munci/O=Munich/OU=Evil
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'C': 'DE', 'ST': 'By', 'CN': 'some common name', 'cbconf': '1', 'capw': 'secretserce', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'caname': 'CAMarkus', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'O': 'Evil Corp', 'OU': 'RnD', 'L': 'Munich'}
+private key
+Generating RSA private key, 2048 bit long modulus
+................................................................+++++
+..............................................................................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'L': 'Munich', 'O': 'Evil Corp', 'OU': 'RnD', 'caname': 'CAMarkus', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce', 'cbconf': '1', 'CN': 'some common name', 'C': 'DE', 'ST': 'By'}
+private key
+Generating RSA private key, 2048 bit long modulus
+..................................................................+++++
+....................................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'caname': 'CAMarkus', 'cbconf': '1', 'C': 'DE', 'OU': 'RnD', 'L': 'Munich', 'O': 'Evil Corp', 'capw': 'secretserce', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'ST': 'By', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'CN': 'some common name'}
+private key
+Generating RSA private key, 2048 bit long modulus
+.............................................................................+++++
+..................................................................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce', 'ST': 'By', 'OU': 'RnD', 'CN': 'some common name', 'C': 'DE', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'caname': 'CAMarkus', 'L': 'Munich', 'O': 'Evil Corp', 'cbconf': '1'}
+private key
+Generating RSA private key, 2048 bit long modulus
+.............................................................+++++
+.......................................................................................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'capw': 'secretserce', 'caname': 'CAMarkus', 'CN': 'some common name', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'OU': 'RnD', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'ST': 'By', 'cbconf': '1', 'L': 'Munich', 'O': 'Evil Corp', 'C': 'DE'}
+private key
+Generating RSA private key, 2048 bit long modulus
+..........................................................+++++
+..............+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py']
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py', 'cbconf=1', 'confpath=./local.conf']
+{'ST': 'By', 'capw': 'secretserce', 'C': 'DE', 'CN': 'some common name', 'confpath': './local.conf', 'OU': 'RnD', 'L': 'Munich', 'O': 'Evil Corp', 'cbconf': '1', 'caname': 'CAMarkus', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name'}
+private key
+Generating RSA private key, 2048 bit long modulus
+....+++++
+.....+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py', 'cbconf=1', 'confpath=./local.conf']
+{'cbconf': '1', 'caname': 'CAMarkus', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce', 'C': 'DE', 'CN': 'some common name', 'OU': 'RnD', 'confpath': './local.conf', 'L': 'Munich', 'O': 'Evil Corp', 'ST': 'By'}
+private key
+Generating RSA private key, 2048 bit long modulus
+..........................................................+++++
+.....+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py', 'cbconf=1', 'confpath=./local.conf']
+{'cbconf': '1', 'capw': 'secretserce', 'C': 'DE', 'L': 'Munich', 'CN': 'some common name', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'confpath': './local.conf', 'O': 'Evil Corp', 'ST': 'By', 'caname': 'CAMarkus', 'OU': 'RnD'}
+private key
+Generating RSA private key, 2048 bit long modulus
+............................+++++
+......+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py', 'cbconf=1', 'confpath=./local.conf']
+{'OU': 'RnD', 'caname': 'CAMarkus', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce', 'ST': 'By', 'C': 'DE', 'L': 'Munich', 'CN': 'some common name', 'O': 'Evil Corp', 'confpath': './local.conf', 'cbconf': '1'}
+private key
+Generating RSA private key, 2048 bit long modulus
+......................................+++++
+.................................................................................................................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'O': 'Evil Corp', 'L': 'Munich', 'cbconf': '1', 'caname': 'CAMarkus', 'capw': 'secretserce', 'C': 'DE', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'CN': 'some common name', 'ST': 'By', 'OU': 'RnD'}
+private key
+Generating RSA private key, 2048 bit long modulus
+.........+++++
+............+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py', 'cbconf=1', 'confpath=./local.conf']
+{'C': 'DE', 'confpath': './local.conf', 'ST': 'By', 'capw': 'secretserce', 'CN': 'some common name', 'O': 'Evil Corp', 'L': 'Munich', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'OU': 'RnD', 'cbconf': '1', 'caname': 'CAMarkus'}
+private key
+Generating RSA private key, 2048 bit long modulus
+.....................................................+++++
+...................................+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'ST': 'By', 'C': 'DE', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'CN': 'some common name', 'L': 'Munich', 'O': 'Evil Corp', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'caname': 'CAMarkus', 'cbconf': '1', 'capw': 'secretserce', 'OU': 'RnD'}
+private key
+Generating RSA private key, 2048 bit long modulus
+...................+++++
+...+++++
+e is 65537 (0x10001)
+
+.rnd file
+
+.csr file
+
+.pem file
+Signature ok
+subject=/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name
+Getting Private key
+
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py', 'cbconf=1', 'confpath=./local.conf']
+{'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'CN': 'some common name', 'ST': 'By', 'capw': 'secretserce', 'cbconf': '1', 'caname': 'CAMarkus', 'O': 'Evil Corp', 'OU': 'RnD', 'confpath': './local.conf', 'L': 'Munich', 'C': 'DE'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'O': 'Evil Corp', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'OU': 'RnD', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'caname': 'CAMarkus', 'L': 'Munich', 'cbconf': '1', 'C': 'DE', 'CN': 'some common name', 'capw': 'secretserce', 'ST': 'By'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['generate-ca-certs.py', 'cbconf=1', 'confpath=./local.conf']
+{'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce', 'ST': 'By', 'cbconf': '1', 'O': 'Evil Corp', 'confpath': './local.conf', 'L': 'Munich', 'OU': 'RnD', 'CN': 'some common name', 'C': 'DE', 'caname': 'CAMarkus'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'O': 'Evil Corp', 'OU': 'RnD', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'L': 'Munich', 'C': 'DE', 'caname': 'CAMarkus', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce', 'CN': 'some common name', 'cbconf': '1', 'ST': 'By'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'cbconf': '1', 'C': 'DE', 'CN': 'some common name', 'caname': 'CAMarkus', 'OU': 'RnD', 'capw': 'secretserce', 'L': 'Munich', 'O': 'Evil Corp', 'ST': 'By'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'O': 'Evil Corp', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'L': 'Munich', 'OU': 'RnD', 'ST': 'By', 'CN': 'some common name', 'C': 'DE', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce', 'cbconf': '1', 'caname': 'CAMarkus'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'C': 'DE', 'capw': 'secretserce', 'L': 'Munich', 'O': 'Evil Corp', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'OU': 'RnD', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'ST': 'By', 'cbconf': '1', 'caname': 'CAMarkus', 'CN': 'some common name'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'C': 'DE', 'ST': 'By', 'capw': 'secretserce', 'L': 'Munich', 'O': 'Evil Corp', 'CN': 'some common name', 'OU': 'RnD', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'cbconf': '1', 'caname': 'CAMarkus'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'cbconf': '1', 'L': 'Munich', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'O': 'Evil Corp', 'capw': 'secretserce', 'C': 'DE', 'CN': 'some common name', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'OU': 'RnD', 'caname': 'CAMarkus', 'ST': 'By'}

@@ -2,8 +2,9 @@
 
 import sys, os
 import subprocess
+import splunk.Intersplunk
 
-debug=True
+debug=False
 try:
     SPLUNK_HOME = os.environ['SPLUNK_HOME']
     APP_HOME = os.path.join(SPLUNK_HOME, 'etc/apps/create-my-certificate-please')
@@ -108,7 +109,7 @@ if (debug):
         fh.write(str(stderr)+"\n")
     print(stderr)
 #finally build ca pem
-argdict['capem'] = argdict['caname'] + '.pem'
+argdict['capem'] = 'CA_' + argdict['caname'] + '.pem'
 process = subprocess.Popen([
     os.path.join(os.environ['SPLUNK_HOME'],'bin/splunk'),
     'cmd',
@@ -130,5 +131,15 @@ if (debug):
         fh.write(".pem file\n")
         fh.write(str(stderr)+"\n")
     print(stderr)
+
+send_list = []
+if(os.path.isfile(os.path.join(certpath,argdict['capem']))):
+    send_list.append({"result":os.path.join(certpath,argdict['capem'])})
+    splunk.Intersplunk.outputResults(send_list)
+else:
+    send_list.append({"result":"error"})
+    splunk.Intersplunk.outputResults(send_list)
+
+
 
 
