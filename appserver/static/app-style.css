@@ -16,6 +16,6 @@
   color: #FF000f;
 }
 
-.ca-radio{
-  list-style-type: none;
+#ca-list{
+  list-style: none;
 }

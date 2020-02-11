@@ -357,3 +357,10 @@ Getting Private key
 ---------------------------------------
 ['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
 {'cbconf': '1', 'L': 'Munich', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'O': 'Evil Corp', 'capw': 'secretserce', 'C': 'DE', 'CN': 'some common name', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'OU': 'RnD', 'caname': 'CAMarkus', 'ST': 'By'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=1', 'confpath=$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf']
+{'CN': 'some common name', 'C': 'DE', 'O': 'Evil Corp', 'ST': 'By', 'L': 'Munich', 'OU': 'RnD', 'caname': 'CAMarkus', 'cbconf': '1', 'confpath': '/opt/splunk/etc/apps/create-my-certificate-please/bin/local.conf', 'subjstr': '/C=DE/ST=By/L=Munich/O=Evil Corp/OU=RnD/CN=some common name', 'capw': 'secretserce'}
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['/opt/splunk/etc/apps/create-my-certificate-please/bin/generate-ca-certs.py', 'cbconf=0', 'caname=dummaCA', 'capw=1234qwer', 'subjstr=/C=DE/ST=/L=MMM/O=none/OU=/CN=yoyo', 'email=']

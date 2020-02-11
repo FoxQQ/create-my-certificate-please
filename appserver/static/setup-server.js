@@ -33,22 +33,17 @@ require(["splunkjs/mvc/searchmanager",
                   $('#CAexists').addClass('label-warning');
                   $('#CAexists').html('<p>Create CA certificate first!</p>');
                }else{
-                  $('#CAexists').addClass('label-success').html('<fieldset><ul id="ca-list">');
+                  $('#CAexists').addClass('label-success').html('<form><fieldset><ul id="ca-list">');
                   for(let i=0;i < rows.length; i++){
-                     $('#ca-list').append(`<li><input type="radio" class="ca-radio" name="ca-radios"> ${rows[i][0]} </input></li>`);
+                     $('#ca-list').append(`<li><label><input type="radio" class="ca-radio" name="ca-radios" value="${rows[i][0]}"> ${rows[i][0]} </label></li>`);
                   }
-                  $('#CAexists').append('</ul></fieldset>');
+                  $('#CAexists').append('</ul></fieldset></form>');
                   $('#submit-btn').show();
                   printed_Data = true;   
                }
             }            
          });
       }
-
-      $('.ca-radio').click(()=>{
-         
-         console.log('clicked');
-      });
 
       caCertExists();
       $('#cbconf').change(function(){
@@ -58,22 +53,29 @@ require(["splunkjs/mvc/searchmanager",
       let defaultTokMod = mvc.Components.get("default")
    
       $('#submit-btn').click(()=>{
-       let caname = $('#caname').val();
-       let pw = $('#pw').val()
-       let C =  $('#C').val();
-       let ST =  $('#ST').val();
-       let L =  $('#L').val();
-       let O =  $('#O').val();
-       let OU =  $('#OU').val();
-       let CN =  $('#CN').val();
-       let email =  $('#email').val();
-       let confpath = $('#confpath').val();
-       
-      
-       let search = $('#cbconf').prop('checked') == true ? `|script generate-server-certs cbconf=1 confpath=${confpath}`:
-         `|script generate-server-certs cbconf=0 caname=${caname} capw=${pw} subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN} email=${email}`
-       console.log(search);
-   
+         let caname = $('#caname').val();
+         let pw = $('#pw').val()
+         let C =  $('#C').val();
+         let ST =  $('#ST').val();
+         let L =  $('#L').val();
+         let O =  $('#O').val();
+         let OU =  $('#OU').val();
+         let CN =  $('#CN').val();
+         let email =  $('#email').val();
+         let confpath = $('#confpath').val();
+
+         if($('.ca-radio:checked').length === 0){
+            alert("select a CA first!");
+            return;
+         }
+         $('.ca-radio:checked').each(function (){
+            console.log($(this).val());
+         });
+         
+         let search = $('#cbconf').prop('checked') == true ? `|script generate-server-certs cbconf=1 confpath=${confpath}`:
+            `|script generate-server-certs cbconf=0 caname=${caname} capw=${pw} subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN} email=${email}`
+         console.log(search);
+   /*
        let sm = new SearchManager({
                id: `submit-server${submited}`,
                earliest: "-1s",
@@ -86,7 +88,7 @@ require(["splunkjs/mvc/searchmanager",
          let smres = mvc.Components.get(`submit-cservera${submited}`);
          console.log(smres);
          submited++;
-         
+       */  
          
          
       });
