@@ -10,18 +10,18 @@
             
             <div id="useconf">
               <label for="confpath">Config file path</label>
-              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf" />
+              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/ca_example.conf" />
             </div>
             
             <div id="usefields" style="display:none;">
               <label for="caname">CA Certificate Name</label>
-              <input type="text" id="caname" name="caname" placeholder="myCAName.." />
+              <input type="text" id="caname" name="caname" placeholder="myCAName.." required="true"/>
           
               <label for="pw">Password</label>
-              <input type="password" id="pw" name="password" placeholder="Please remember me.." />
+              <input type="password" id="pw" name="password" placeholder="Please remember me.." required="true"/>
   
               <label for="C">Country Name (2 letter code) [AU]</label>
-              <input type="text" id="C" name="C" placeholder="DE">DE</input>
+              <input type="text" id="C" name="C" placeholder="DE"></input>
   
               <label for="ST">State or Province Name (full name) [Some-State]</label>
               <input type="text" id="ST" name="ST" placeholder="Bavaria"/>
@@ -30,13 +30,13 @@
               <input type="text" id="L" name="L" placeholder="Munich"/>
   
               <label for="O">Organization Name (eg, company) [Internet Widgits Pty Ltd]</label>
-              <input type="text" id="O" name="O" placeholder="Evil Corp">Evil Corp</input>
+              <input type="text" id="O" name="O" placeholder="Evil Corp"></input>
   
               <label for="OU">Organizational Unit Name (eg, section) []</label>
               <input type="text" id="OU" name="OU" placeholder="RnD"/>
   
               <label for="CN">Common Name (e.g. server FQDN or YOUR name) []</label>
-              <input type="text" id="CN" name="CN" placeholder="Boss"/>
+              <input type="text" id="CN" name="CN" placeholder="Boss" required="true" value="Boss"/>
   
               <label for="email">Common Name (e.g. server FQDN or YOUR name) []</label>
               <input type="text" id="email" name="email" placeholder="boss@evil.corp"/>

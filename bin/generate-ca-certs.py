@@ -61,7 +61,7 @@ if(argdict['cbconf']=="1"):
     useconf()
 else:
     noconf()
-
+argdict['caname'] =  'CA_' + argdict['caname']
 argdict['caprivatekey'] = argdict['caname'] + '.key'
 #run the openssl command to get a new private key
 process = subprocess.Popen([os.path.join(os.environ['SPLUNK_HOME'],'bin/splunk'),
@@ -109,7 +109,7 @@ if (debug):
         fh.write(str(stderr)+"\n")
     print(stderr)
 #finally build ca pem
-argdict['capem'] = 'CA_' + argdict['caname'] + '.pem'
+argdict['capem'] =argdict['caname'] + '.pem'
 process = subprocess.Popen([
     os.path.join(os.environ['SPLUNK_HOME'],'bin/splunk'),
     'cmd',
@@ -135,10 +135,10 @@ if (debug):
 send_list = []
 if(os.path.isfile(os.path.join(certpath,argdict['capem']))):
     send_list.append({"result":os.path.join(certpath,argdict['capem'])})
-    splunk.Intersplunk.outputResults(send_list)
+    splunk.Intersplunk.outputResults([{"result":os.path.join(certpath,argdict['capem'])}])
 else:
     send_list.append({"result":"error"})
-    splunk.Intersplunk.outputResults(send_list)
+    splunk.Intersplunk.outputResults([{"result":"error"}])
 
 
 

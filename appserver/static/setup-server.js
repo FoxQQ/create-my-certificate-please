@@ -3,6 +3,7 @@ require(["splunkjs/mvc/searchmanager",
        "splunkjs/mvc/tokenutils", 
        "splunkjs/mvc/simplexml/ready!"],
   function(SearchManager, $, mvc){
+
       var submited = 0;
       let d = new Date();
       console.log("debuuger says: v1", d);
@@ -53,42 +54,55 @@ require(["splunkjs/mvc/searchmanager",
       let defaultTokMod = mvc.Components.get("default")
    
       $('#submit-btn').click(()=>{
-         let caname = $('#caname').val();
-         let pw = $('#pw').val()
-         let C =  $('#C').val();
-         let ST =  $('#ST').val();
-         let L =  $('#L').val();
-         let O =  $('#O').val();
-         let OU =  $('#OU').val();
-         let CN =  $('#CN').val();
-         let email =  $('#email').val();
-         let confpath = $('#confpath').val();
-
+         var servername = $('#servername').val();
+         var pw = $('#pw').val()
+         var C =  $('#C').val();
+         var ST =  $('#ST').val();
+         var L =  $('#L').val();
+         var O =  $('#O').val();
+         var OU =  $('#OU').val();
+         var CN =  $('#CN').val();
+         var email =  $('#email').val();
+         var confpath = $('#confpath').val();
+         var cbsplunkweb = $('#splunkwebcb').prop("checked")?1:0;
+         var capw = $('#capw').val();
+         var caname;
          if($('.ca-radio:checked').length === 0){
             alert("select a CA first!");
             return;
          }
-         $('.ca-radio:checked').each(function (){
-            console.log($(this).val());
-         });
+         else{
+            $('.ca-radio:checked').each(function (){
+               if($(this).prop("checked")){
+                  caname = $(this).val();
+               }               
+            });
+         }
          
          let search = $('#cbconf').prop('checked') == true ? `|script generate-server-certs cbconf=1 confpath=${confpath}`:
-            `|script generate-server-certs cbconf=0 caname=${caname} capw=${pw} subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN} email=${email}`
+            `|script generate-server-certs cbconf=0 cbsplunkweb=${cbsplunkweb} servername=${servername} pw=${pw} subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN} email=${email} capw=${capw} caname=${caname}`;
          console.log(search);
-   /*
-       let sm = new SearchManager({
-               id: `submit-server${submited}`,
-               earliest: "-1s",
-               latest: "now",
-               preview: "false",
-               cache: "false",
-               search: search
-         });
-         
-         let smres = mvc.Components.get(`submit-cservera${submited}`);
+ 
+         let sm = new SearchManager({
+                  id: `submit-server${submited}`,
+                  earliest: "-1s",
+                  latest: "now",
+                  preview: "false",
+                  cache: "false",
+                  search: search
+            });
+            
+              
+         let smres = mvc.Components.get(`submit-server${submited}`);
          console.log(smres);
+         let res = smres.data("results");
+         console.log(res);
+         res.on("data", function(){
+            let rows = res.data();
+            console.log(rows);
+         });
          submited++;
-       */  
+     
          
          
       });

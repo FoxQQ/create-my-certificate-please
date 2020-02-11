@@ -10,18 +10,18 @@
             
             <div id="useconf">
               <label for="confpath">Config file path</label>
-              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/local.conf"/>
+              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/server_example.conf"/>
             </div>
             
             <div id="usefields" style="display:none;">
-              <label for="caname">CA Certificate Name</label>
-              <input type="text" id="caname" name="caname" placeholder="myCAName.."/>
+              <label for="servername">Server Certificate Name</label>
+              <input type="text" id="servername" name="servername" placeholder="myServerName.." required="true"/>
           
               <label for="pw">Password</label>
-              <input type="password" id="pw" name="password" placeholder="Please remember me.."/>
+              <input type="password" id="pw" name="password" placeholder="Please remember me.." required="true"/>
   
               <label for="C">Country Name (2 letter code) [AU]</label>
-              <input type="text" id="C" name="C" placeholder="DE">DE</input>
+              <input type="text" id="C" name="C" placeholder="DE"></input>
   
               <label for="ST">State or Province Name (full name) [Some-State]</label>
               <input type="text" id="ST" name="ST" placeholder="Bavaria"/>
@@ -30,7 +30,7 @@
               <input type="text" id="L" name="L" placeholder="Munich"/>
   
               <label for="O">Organization Name (eg, company) [Internet Widgits Pty Ltd]</label>
-              <input type="text" id="O" name="O" placeholder="Evil Corp">Evil Corp</input>
+              <input type="text" id="O" name="O" placeholder="Evil Corp"></input>
   
               <label for="OU">Organizational Unit Name (eg, section) []</label>
               <input type="text" id="OU" name="OU" placeholder="RnD"/>
@@ -40,6 +40,12 @@
   
               <label for="email">Common Name (e.g. server FQDN or YOUR name) []</label>
               <input type="text" id="email" name="email" placeholder="boss@evil.corp"/>
+              
+              <label for="splunkwebcb">Use the Cert for Splunkweb? (password will be removed)</label>
+              <input type="checkbox" id="splunkwebcb" name="splunkwebcd">check to use cert for splunkweb</input>
+              <br /> <hl></hl> <br/>
+              <label for="capw">CA Password</label>
+              <input type="password" id="capw" name="capw" placeholder="password for CAprivate.key" required="true"/>
             </div>
             
           </form>
