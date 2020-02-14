@@ -55,11 +55,13 @@ class App():
             writeDebugLog("ok")
         self.argdict = argdict
         if(self.argdict['apptype'] == 'sender'):
-            self.mkemptyApp(os.path.join(self.argdict['appspath'], self.argdict['servername'] + '_outputs_app'))
-            self.mkInputs()            
+            self.argdict['appname'] = self.argdict['servername'] + '_outputs_app'
+            self.mkemptyApp(os.path.join(self.argdict['appspath'], self.argdict['appname']))
+            self.mkOutputs()            
         elif(self.argdict['apptype'] == 'receiver'):
-            self.mkemptyApp(os.path.join(self.argdict['appspath'], self.argdict['servername'] + '_inputs_app'))
-            self.mkOutputs()
+            self.argdict['appname'] = self.argdict['servername'] + '_inputs_app'
+            self.mkemptyApp(os.path.join(self.argdict['appspath'], self.argdict['appname']))
+            self.mkInputs()
         self.mkServer()
         self.pullCerts()
 
@@ -81,14 +83,15 @@ class App():
         if(not os.path.exists(os.path.join(path, 'certs'))):
             os.mkdir(os.path.join(path, 'certs'))
         self.argdict['local'] = os.path.join(path, 'local')
-        self.argdict['certs'] = os.path.join(path, 'certs')
+        self.argdict['certs'] = os.path.join(path , 'certs')
+        self.argdict['confpathcerts'] = os.path.join(self.argdict['SPLUNK_HOME'],'etc','apps',self.argdict['appname'],'certs')
 
     def mkInputs(self):
         with open(os.path.join(self.argdict['local'], 'inputs.conf'), 'w') as fh:
             fh.write("[splunktcp-ssl:9997]\n")
             fh.write("disabled = 0\n\n")
-            fh.write("[splunktcp-ssl:9997]")
-            fh.write("serverCert = {}\n".format(self.argdict['certs']))
+            fh.write("[SSL]\n")
+            fh.write("serverCert = {}\n".format(os.path.join(self.argdict['confpathcerts'], self.argdict['servername']+'_final.pem')))
             fh.write("sslPassword = {}\n".format(self.argdict['pw']))
             fh.write("requireClientCert = false\n")
 
@@ -96,16 +99,16 @@ class App():
         with open(os.path.join(self.argdict['local'], 'outputs.conf'), 'w') as fh:
             fh.write("[tcpout]\n")
             fh.write("defaultGroup = splunkssl\n\n")
-            fh.write("[tcpout:splunkssl]")
+            fh.write("[tcpout:splunkssl]\n")
             fh.write("server = hostname:9997\n")
-            fh.write("clientCert = {}\n".format(self.argdict['certs']))
+            fh.write("clientCert = {}\n".format(os.path.join(self.argdict['confpathcerts'], self.argdict['servername']+'_final.pem')))
             fh.write("sslPassword = {}\n".format(self.argdict['pw']))
             fh.write("useClientSSLCompression = true\n")
 
     def mkServer(self):
         with open(os.path.join(self.argdict['local'], 'server.conf'), 'w') as fh:
             fh.write("[sslConfig]\n")
-            fh.write("sslRootCAPath = {}\n".format(self.argdict['certs']))
+            fh.write("sslRootCAPath = {}\n".format(os.path.join(self.argdict['confpathcerts'], self.argdict['caname']+'.pem')))
 
     def buildSenderApp(self, path):
         mkemptyApp(path)

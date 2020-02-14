@@ -55,6 +55,7 @@ require(["splunkjs/mvc/searchmanager",
       let defaultTokMod = mvc.Components.get("default")
    
       $('#submit-btn').click(()=>{
+         $('#createapp').html('');
          servername = $('#servername').val();
          pw = $('#pw').val()
          var C =  $('#C').val();
@@ -102,7 +103,7 @@ require(["splunkjs/mvc/searchmanager",
             let data = res.data();
             console.log(data);
             if(data.fields.includes("result")){
-               $('#mainform').after('<div id="createapp"></div>');
+               $('#createapp').html('');
                $('#createapp').addClass('label-success').html(`</br>Server cert created here: ${data.rows[0]}</br>`);
                $('#createapp').append("<span class='app-span'><button class='btn btn-primary' id='btn-sender-app'>gen-sender-app</button></span>");
                $('#createapp').append("<span class='app-span'><button class='btn btn-primary' id='btn-receiver-app'>gen-receiver-app</button></span>");
