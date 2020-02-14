@@ -8,6 +8,10 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
+.app-span{
+  margin: 8px 4px;
+}
+
 .myerror {
   background-color: #12a021;
 }

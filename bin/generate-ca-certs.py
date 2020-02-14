@@ -4,11 +4,15 @@ import sys, os
 import subprocess
 import splunk.Intersplunk
 
+###TODO check if wrong path is passed and respond!
+
 debug=False
 try:
     SPLUNK_HOME = os.environ['SPLUNK_HOME']
     APP_HOME = os.path.join(SPLUNK_HOME, 'etc/apps/create-my-certificate-please')
     certpath = os.path.join(APP_HOME, 'certs')
+    if(not os.path.exists(certpath)):
+        os.mkdir(certpath)
 except Exception as e:
     with open('debug.log','a') as fh:
         fh.write(str(e)+"\n")

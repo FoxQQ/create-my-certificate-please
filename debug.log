@@ -1,0 +1,15 @@
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['bin/generate-server-certs.py']
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['bin/generate-server-certs.py', 'cbconf=1', 'confpath=/etc/apps/create-my-certificate-please/bin/server_example.conf']
+[Errno 2] No such file or directory: '/etc/apps/create-my-certificate-please/bin/server_example.conf'
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['bin/generate-server-certs.py', 'cbconf=1', 'confpath=/etc/apps/create-my-certificate-please/bin/server_example.conf']
+[Errno 2] No such file or directory: '/etc/apps/create-my-certificate-please/bin/server_example.conf'
+/opt/splunk/etc/apps/create-my-certificate-please/certs
+---------------------------------------
+['bin/generate-server-certs.py', 'cbconf=1', 'confpath=/etc/apps/create-my-certificate-please/bin/server_example.conf']
+[Errno 2] No such file or directory: '/etc/apps/create-my-certificate-please/bin/server_example.conf'

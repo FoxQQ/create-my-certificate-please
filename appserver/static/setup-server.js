@@ -6,6 +6,7 @@ require(["splunkjs/mvc/searchmanager",
 
       var submited = 0;
       let d = new Date();
+      var servername, pw, caname, confpath;
       console.log("debuuger says: v1", d);
 
       function caCertExists(){
@@ -54,8 +55,8 @@ require(["splunkjs/mvc/searchmanager",
       let defaultTokMod = mvc.Components.get("default")
    
       $('#submit-btn').click(()=>{
-         var servername = $('#servername').val();
-         var pw = $('#pw').val()
+         servername = $('#servername').val();
+         pw = $('#pw').val()
          var C =  $('#C').val();
          var ST =  $('#ST').val();
          var L =  $('#L').val();
@@ -63,10 +64,10 @@ require(["splunkjs/mvc/searchmanager",
          var OU =  $('#OU').val();
          var CN =  $('#CN').val();
          var email =  $('#email').val();
-         var confpath = $('#confpath').val();
+         confpath = $('#confpath').val();
          var cbsplunkweb = $('#splunkwebcb').prop("checked")?1:0;
          var capw = $('#capw').val();
-         var caname;
+         caname;
          if($('.ca-radio:checked').length === 0){
             alert("select a CA first!");
             return;
@@ -98,17 +99,53 @@ require(["splunkjs/mvc/searchmanager",
          let res = smres.data("results");
          console.log(res);
          res.on("data", function(){
-            let rows = res.data();
-            console.log(rows);
+            let data = res.data();
+            console.log(data);
+            if(data.fields.includes("result")){
+               $('#mainform').after('<div id="createapp"></div>');
+               $('#createapp').addClass('label-success').html(`</br>Server cert created here: ${data.rows[0]}</br>`);
+               $('#createapp').append("<span class='app-span'><button class='btn btn-primary' id='btn-sender-app'>gen-sender-app</button></span>");
+               $('#createapp').append("<span class='app-span'><button class='btn btn-primary' id='btn-receiver-app'>gen-receiver-app</button></span>");
+
+               $('#btn-sender-app').click(()=>{
+                  createApp('sender');
+               });
+               
+               $('#btn-receiver-app').click(()=>{
+                  createApp('receiver');
+               });
+            } else {
+               $('#mainform').append('div').addClass('label-waring').html(`<p>Error</p>`);
+            }
+            
          });
          submited++;
      
-         
-         
       });
-   
+
+      function createApp(apptype){
+         console.log("creating " + apptype + " app");
+         let jobid = `create-${apptype}-${parseInt(Math.random()*1000000)}`;
+         let search = $('#cbconf').prop('checked') == true ? `|script create-certs-app cbconf=1 confpath=${confpath} apptype=${apptype}`:
+            `|script create-certs-app cbconf=0 apptype=${apptype} servername=${servername} pw=${pw} caname=${caname}`;
+         console.log("search" + search);
+         let SM = new SearchManager({
+            id: jobid,
+            earliest: "-10s",
+            latest: "now",
+            preview: "false",
+            cache: "false",
+            search: search
+         });
+         let mainsearch = mvc.Components.get(jobid);
+         let myResult = mainsearch.data("results");
+         var  printed_data = false;
+         myResult.on("data", function(){
+            console.log("data",myResult.data());
+            console.log("has data",myResult.hasData());
+            
+         });
+      }   
+      
 
 });
-
-
-

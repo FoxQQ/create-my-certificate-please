@@ -28,7 +28,7 @@ results = []
 
 files = [f for f in os.listdir(certpath) if 'CA' in f and f.endswith('pem')]
 for f in files:
-    results.append({"file":f})
+    results.append({"file":f[:-4]})
 
 if(not len(results)): results.append({"file":"none"})
 
