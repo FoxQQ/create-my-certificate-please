@@ -10,7 +10,7 @@
             
             <div id="useconf">
               <label for="confpath">Config file path</label>
-              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/bin/server_example.conf"/>
+              <input type="text" id="confpath" name="confpath" value="$SPLUNK_HOME/etc/apps/create-my-certificate-please/myconfs/server_example.conf"/>
             </div>
             
             <div id="usefields" style="display:none;">

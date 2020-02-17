@@ -81,8 +81,8 @@ require(["splunkjs/mvc/searchmanager",
             });
          }
          
-         let search = $('#cbconf').prop('checked') == true ? `|script generate-server-certs cbconf=1 confpath=${confpath}`:
-            `|script generate-server-certs cbconf=0 cbsplunkweb=${cbsplunkweb} servername=${servername} pw=${pw} subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN} email=${email} capw=${capw} caname=${caname}`;
+         let search = $('#cbconf').prop('checked') == true ? `|script generate-server-certs "cbconf=1" "confpath=${confpath}"`:
+            `|script generate-server-certs "cbconf=0" "cbsplunkweb=${cbsplunkweb}" "servername=${servername}" "pw=${pw}" "subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN}" "email=${email}" "capw=${capw}" "caname=${caname}"`;
          console.log(search);
  
          let sm = new SearchManager({
