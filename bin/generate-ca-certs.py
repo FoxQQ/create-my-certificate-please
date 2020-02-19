@@ -7,6 +7,7 @@ import splunk.Intersplunk
 ###TODO check if wrong path is passed and respond!
 
 debug=False
+print("started")
 try:
     SPLUNK_HOME = os.environ['SPLUNK_HOME']
     APP_HOME = os.path.join(SPLUNK_HOME, 'etc/apps/create-my-certificate-please')
@@ -28,9 +29,11 @@ def useconf():
     try:
         with open(argdict['confpath'], "r") as fh:
             argdict['subjstr'] = ""
-        
+                   
             for line in fh:
+		print(line)
                 args = line.replace("\n","").split('=', 1)
+		print(args)
                 if(args[0]=='C'):
                     argdict['subjstr'] += "/C=" + args[1]
                 elif(args[0]=='ST'):
@@ -43,6 +46,8 @@ def useconf():
                     argdict['subjstr'] += "/OU=" + args[1]
                 elif(args[0]=='CN'):
                     argdict['subjstr'] += "/CN=" + args[1]
+		elif(args[0] == '' or args[0].startswith('#')):
+		    continue
                 argdict[args[0]] = args[1]
     except Exception as e:
         with open("debug.log", "a") as fh:
@@ -59,6 +64,7 @@ with open("debug.log", "a") as fh:
 argdict= {}
 for arg in sys.argv[1:]:
     args=(arg.split("=", 1))
+    print(args)
     argdict[args[0]]=args[1]
 
 if(argdict['cbconf']=="1"):

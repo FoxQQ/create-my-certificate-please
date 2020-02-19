@@ -30,8 +30,8 @@ require(["splunkjs/mvc/searchmanager",
     let confpath = $('#confpath').val();
     
    
-    let search = $('#cbconf').prop('checked') == true ? `|script generate-ca-certs cbconf=1 confpath=${confpath}`:
-      `|script generate-ca-certs cbconf=0 caname=${caname} capw=${pw} subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN} email=${email}`
+    let search = $('#cbconf').prop('checked') == true ? `|script generate-ca-certs "cbconf=1" "confpath=${confpath}"`:
+      `|script generate-ca-certs "cbconf=0" "caname=${caname}" "capw=${pw}" "subjstr=/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN}" "email=${email}"`
     console.log(search);
 
     let sm = new SearchManager({
