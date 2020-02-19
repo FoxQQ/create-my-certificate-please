@@ -53,7 +53,7 @@ else:
 argdict['caprivatekey'] = argdict['caname'] +'.key'
 argdict['capem'] = argdict['caname'] + '.pem'
 argdict['serverprivatekey'] = argdict['servername'] + '.key'
-if(debug): writeDebugLog(os.path.join(certpath, argdict['serverprivatekey']))
+
 process = subprocess.Popen([
         SPLUNK_BIN,
         'cmd',
@@ -67,9 +67,6 @@ process = subprocess.Popen([
         '2048'],
         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 stdout, stderr = process.communicate()
-if(debug):
-    writeDebugLog("private key:")
-    writeDebugLog(stderr)
 
 # remove password if cert is for splunkweb
 if(argdict['cbsplunkweb'] == '1'):
@@ -88,34 +85,11 @@ if(argdict['cbsplunkweb'] == '1'):
         ],
         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
-    if(debug):
-        writeDebugLog("removing key pw:")
-        writeDebugLog(stderr)
-        # logs the decrypted key
-        """
-        process = subprocess.Popen([
-            SPLUNK_BIN,
-            'cmd',
-            'openssl',
-            'rsa',
-            '-in',
-            os.path.join(certpath, argdict['serverprivatekey']),
-            '-passin',
-            'pass:'+argdict['pw'],
-            '-text'
-            ],
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = process.communicate()
-        writeDebugLog("  ###  ###  ")
-        writeDebugLog(stdout)
-        """  
 else:
     if(debug): writeDebugLog("cert not for splunkweb")
 
 # create csr file
 argdict['servercsr'] = argdict['servername'] + '.csr'
-if(debug): writeDebugLog(os.path.join(certpath, argdict['servercsr']))
-
 process = subprocess.Popen([
     SPLUNK_BIN,
     'cmd',
@@ -167,7 +141,6 @@ if(debug):
     writeDebugLog(stderr)
     writeDebugLog("stdout")
     writeDebugLog(stdout)
-
 # pull it all together in one cert.pem
 def getFileContent(fn):
     with open(fn, 'r') as fh:
