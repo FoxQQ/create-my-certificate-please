@@ -31,9 +31,9 @@ def useconf():
             argdict['subjstr'] = ""
                    
             for line in fh:
-		print(line)
+                print(line)
                 args = line.replace("\n","").split('=', 1)
-		print(args)
+
                 if(args[0]=='C'):
                     argdict['subjstr'] += "/C=" + args[1]
                 elif(args[0]=='ST'):
@@ -46,8 +46,8 @@ def useconf():
                     argdict['subjstr'] += "/OU=" + args[1]
                 elif(args[0]=='CN'):
                     argdict['subjstr'] += "/CN=" + args[1]
-		elif(args[0] == '' or args[0].startswith('#')):
-		    continue
+                elif(args[0] == '' or args[0].startswith('#')):
+                    continue
                 argdict[args[0]] = args[1]
     except Exception as e:
         with open("debug.log", "a") as fh:
