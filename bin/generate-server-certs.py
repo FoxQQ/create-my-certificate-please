@@ -85,6 +85,8 @@ if(argdict['cbsplunkweb'] == '1'):
         ],
         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
+
+    if(debug): writeDebugLog(f'stdout: {stderr}')
 else:
     if(debug): writeDebugLog("cert not for splunkweb")
 
@@ -107,9 +109,6 @@ process = subprocess.Popen([
     ],
     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 stdout, stderr = process.communicate()
-if(debug):
-    writeDebugLog("csr:")
-    writeDebugLog(stderr)
 
 # create pem and sign it with out ca
 argdict['serverpem'] = argdict['servername'] + '.pem'

@@ -65,6 +65,11 @@ require(["splunkjs/mvc/searchmanager",
          var OU =  $('#OU').val();
          var CN =  $('#CN').val();
          var email =  $('#email').val();
+	 console.log('VALUES:',C+ST+L+O+OU+CN)
+	 if(C+ST+L+O+OU+CN === ''){
+		 alert('you need to enter values for you cert, at least Common Name should contain a value or the scrip fails silently :(')
+		 return;
+	 }
          confpath = $('#confpath').val();
          var cbsplunkweb = $('#splunkwebcb').prop("checked")?1:0;
          var capw = $('#capw').val();
