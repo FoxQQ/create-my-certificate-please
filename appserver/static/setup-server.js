@@ -7,7 +7,7 @@ require(["splunkjs/mvc/searchmanager",
       var submited = 0;
       let d = new Date();
       var servername, pw, caname, confpath;
-      console.log("debuuger says: v1", d);
+      console.log("debuuger says: v", d);
 
       function caCertExists(){
          console.log("checking if ca already generated");
@@ -65,8 +65,7 @@ require(["splunkjs/mvc/searchmanager",
          var OU =  $('#OU').val();
          var CN =  $('#CN').val();
          var email =  $('#email').val();
-	 console.log('VALUES:',C+ST+L+O+OU+CN)
-	 if(C+ST+L+O+OU+CN === ''){
+	 if(C+ST+L+O+OU+CN === '' && !$('#cbconf').prop('checked')){
 		 alert('you need to enter values for you cert, at least Common Name should contain a value or the scrip fails silently :(')
 		 return;
 	 }

@@ -6,7 +6,7 @@
         <div id="CAexists"/>
         <div id="mainform">
           <form>
-            <input type="checkbox" id="cbconf" name="cbconf" checked="checked">Use local config file</input>
+            <input type="checkbox" id="cbconf" name="cbconf" checked="false">Use local config file</input>
             
             <div id="useconf">
               <label for="confpath">Config file path</label>
